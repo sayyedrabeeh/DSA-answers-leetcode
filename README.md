@@ -15,13 +15,7 @@ Each problem is organized in its own folder and includes:
 
 ---
 
-## 📁 Folder Structure
-
-├── Two-Sum
-│ ├── Two-Sum.py
-│ └── README.md
-├── README.md (this file)
-
+ 
 
 > 📝 Follow the format `XX-Question-Name` (with padded numbers) if you’re numbering the folders in order.
 
@@ -31,7 +25,7 @@ Each problem is organized in its own folder and includes:
 
 | No. | Question Name           | Difficulty | Link to Solution Folder |
 |-----|-------------------------|------------|--------------------------|
-| 1   | [Two Sum](./Two Sum)    | Easy       | `./Two Sum`              |
+| 1   | [Two Sum](./Two%20Sum)    | Easy       | `./Two Sum`              |
  
 
 ---
