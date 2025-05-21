@@ -112,4 +112,144 @@ class Solution:
 
 ---
 
+### Explanation 
+
+
+Great! Let's go **line-by-line** and walk through **each iteration** of your `twoSum` function, including what happens in the hash map (`seen`) during each step.
+
+ 
+
+---
+
+ 
+
+```python
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        seen = {}
+        for i, j in enumerate(nums):
+            c = target - j 
+            if c in seen:
+                return [seen[c], i]
+            seen[j] = i
+```
+
+---
+
+## 🧠 Line-by-Line Explanation
+
+### `class Solution:`
+
+Defines a class named `Solution`. This is just a convention used in LeetCode and other platforms.
+
+---
+
+### `def twoSum(self, nums: List[int], target: int) -> List[int]:`
+
+Defines a method `twoSum` that takes:
+
+* `nums`: A list of integers.
+* `target`: The target sum we want to achieve by adding two numbers from `nums`.
+
+---
+
+### `seen = {}`
+
+Creates an **empty dictionary (hash map)** to store:
+
+* Keys: Numbers from the array.
+* Values: Their corresponding indices.
+
+---
+
+### `for i, j in enumerate(nums):`
+
+Loops through `nums` using `enumerate`, so:
+
+* `i` is the **index**
+* `j` is the **value**
+
+---
+
+### `c = target - j`
+
+Calculates the **complement**:
+
+* `c` is the number you need so that `j + c = target`.
+
+---
+
+### `if c in seen:`
+
+Checks if the **complement** `c` is already in the hash map.
+
+* If yes: you've found two numbers that add to the target!
+
+---
+
+### `return [seen[c], i]`
+
+Returns the **indices** of the two numbers:
+
+* `seen[c]`: index of the complement.
+* `i`: current index.
+
+---
+
+### `seen[j] = i`
+
+Stores the current number `j` and its index `i` in the dictionary for future lookup.
+
+---
+
+## 🔁 Step-by-Step Iteration Example
+
+### 🧪 Example Input:
+
+```python
+nums = [2, 7, 11, 15]
+target = 9
+```
+
+### Initial state:
+
+```python
+seen = {}
+```
+
+---
+
+### ✅ Iteration 1:
+
+* `i = 0`, `j = 2`
+* `c = 9 - 2 = 7`
+* `7` is **not** in `seen`
+* Store `seen[2] = 0`
+
+➡️ `seen = {2: 0}`
+
+---
+
+### ✅ Iteration 2:
+
+* `i = 1`, `j = 7`
+* `c = 9 - 7 = 2`
+* `2` **is** in `seen` → Found a match!
+* Return `[seen[2], 1]` → `[0, 1]`
+
+🎉 Output: `[0, 1]`
+
+No further iterations are needed because we already found the answer.
+
+---
+
+## 🧠 Summary
+
+| Step | i | j | c (`target - j`) | `seen` Before | `c in seen?` | Action             | `seen` After |
+| ---- | - | - | ---------------- | ------------- | ------------ | ------------------ | ------------ |
+| 1    | 0 | 2 | 7                | `{}`          | ❌ No         | Add `2: 0` to seen | `{2: 0}`     |
+| 2    | 1 | 7 | 2                | `{2: 0}`      | ✅ Yes        | Return `[0, 1]`    | N/A          |
+
+---
+
  
