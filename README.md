@@ -25,7 +25,8 @@ Each problem is organized in its own folder and includes:
 
 | No. | Question Name           | Difficulty | Link to Solution Folder |
 |-----|-------------------------|------------|--------------------------|
-| 1   | [Two Sum](./Two%20Sum)    | Easy       | `./Two Sum`              |
+| 1   | [Two Sum](./Two%20Sum)  | Easy       | `./Two Sum`              |
+| 2  | [Valid Parentheses](./Valid%20Parentheses)  | Easy       | `.Valid Parentheses`              |
  
 
 ---
