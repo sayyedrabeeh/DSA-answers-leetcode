@@ -161,3 +161,47 @@ Final output: **3**
 
 ---
 
+Perfect! Let's walk **step by step through each iteration** of your code using the example:
+
+---
+
+## 🔍 Input:
+
+```python
+s = "abcabcbb"
+```
+
+### Goal:
+
+Find the **length of the longest substring** without repeating characters.
+
+---
+ 
+---
+
+## 🔄 Step-by-Step Execution
+
+| `i` | `s[i]` | `a` (set) before loop | `c` | Duplicate? | Action taken                                    | `a` (set) after loop | `m` |
+| --- | ------ | --------------------- | --- | ---------- | ----------------------------------------------- | -------------------- | --- |
+| 0   | 'a'    | `{}`                  | 0   | ❌ No       | Add 'a'                                         | `{a}`                | 1   |
+| 1   | 'b'    | `{a}`                 | 0   | ❌ No       | Add 'b'                                         | `{a, b}`             | 2   |
+| 2   | 'c'    | `{a, b}`              | 0   | ❌ No       | Add 'c'                                         | `{a, b, c}`          | 3   |
+| 3   | 'a'    | `{a, b, c}`           | 0   | ✅ Yes      | Remove 'a' (`s[c]`), then c → 1 → Add 'a'       | `{a, b, c}`          | 3   |
+| 4   | 'b'    | `{a, b, c}`           | 1   | ✅ Yes      | Remove 'b' (`s[c]`), then c → 2 → Add 'b'       | `{a, b, c}`          | 3   |
+| 5   | 'c'    | `{a, b, c}`           | 2   | ✅ Yes      | Remove 'c' (`s[c]`), then c → 3 → Add 'c'       | `{a, b, c}`          | 3   |
+| 6   | 'b'    | `{a, b, c}`           | 3   | ✅ Yes      | Remove 'a', c → 4 → Remove 'b', c → 5 → Add 'b' | `{b, c}`             | 3   |
+| 7   | 'b'    | `{b, c}`              | 5   | ✅ Yes      | Remove 'c', c → 6 → Remove 'b', c → 7 → Add 'b' | `{b}`                | 3   |
+
+---
+
+## ✅ Final Answer:
+
+```
+m = 3
+```
+
+→ The longest substrings without repeating characters are: `"abc"`, `"bca"`, `"cab"`, all of length **3**.
+
+---
+
+ 
