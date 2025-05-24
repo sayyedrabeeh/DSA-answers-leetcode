@@ -152,4 +152,87 @@ Now return results back up the chain:
 
 ---
 
+#### comparision 
+
+Let's compare your **recursive solution** to the problem “**Merge Two Sorted Lists**” with the **iterative approach**, and analyze both in terms of **code structure** and **time/space complexity** — rather than just focusing on DSA theory.
+
+---
+
+## ✅   Recursive Solution  
+
+```python
+def mergeTwoLists(self, list1, list2):
+    if not list1:
+        return list2
+    if not list2:
+        return list1
+    if list1.val < list2.val:
+        list1.next = self.mergeTwoLists(list1.next, list2)
+        return list1
+    else:
+        list2.next = self.mergeTwoLists(list1, list2.next)
+        return list2
+```
+
+### 🔹 Time Complexity: `O(n + m)`
+
+* Every node is visited **once**.
+* `n` is the length of `list1`, `m` is the length of `list2`.
+
+### 🔹 Space Complexity: `O(n + m)` (due to recursion)
+
+* Each recursive call adds a new frame to the call stack.
+* In the **worst case**, one function call per node is on the stack.
+
+---
+
+## 🔁 Iterative Version (For Comparison)
+
+```python
+def mergeTwoLists(self, list1, list2):
+    dummy = ListNode(-1)
+    tail = dummy
+
+    while list1 and list2:
+        if list1.val < list2.val:
+            tail.next = list1
+            list1 = list1.next
+        else:
+            tail.next = list2
+            list2 = list2.next
+        tail = tail.next
+
+    tail.next = list1 if list1 else list2
+    return dummy.next
+```
+
+### 🔹 Time Complexity: `O(n + m)`
+
+* Same: visit every node once.
+
+### 🔹 Space Complexity: `O(1)`
+
+* No extra stack memory — everything is done in place.
+* Just uses a few pointers.
+
+---
+
+## 🆚 Comparison Table:
+
+| Feature                | Recursive Version                     | Iterative Version             |
+| ---------------------- | ------------------------------------- | ----------------------------- |
+| Code Simplicity        | More elegant, clean, short            | Slightly longer, more verbose |
+| Readability            | High (especially for recursive minds) | Moderate                      |
+| Time Complexity        | O(n + m)                              | O(n + m)                      |
+| Space Complexity       | **O(n + m)** (due to call stack)      | **O(1)**                      |
+| Risk of Stack Overflow | Possible for large inputs             | None                          |
+| Tail Recursion Support | Python doesn't optimize tail calls    | Not needed                    |
+
+---
+
+## 🔚 Conclusion:
+
+* If you value **cleaner code** and are confident in recursion, your **recursive approach** is great — especially in interviews where clarity matters.
+* If you're optimizing for **performance and safety**, especially with large input sizes, the **iterative approach** is safer and more efficient in space.
+
  
