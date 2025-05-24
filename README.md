@@ -28,6 +28,7 @@ Each problem is organized in its own folder and includes:
 | 1   | [Two Sum](./Two%20Sum)  | Easy       | `./Two Sum`              |
 | 2  | [Valid Parentheses](./Valid%20Parentheses)  | Easy       | `.Valid Parentheses`              |
 | 3 | [Longest Substring Without Repeating Characters](./Longest%20Substring%20Without%20Repeating%20Characters/)  | Easy       | `.Longest Substring Without Repeating Characters`              |
+| 4 | [Merge Two Sorted Lists](./Merge%20Two%20Sorted%20Lists/)  | Easy   | `.Merge Two Sorted Lists  ` |
  
 
 ---
